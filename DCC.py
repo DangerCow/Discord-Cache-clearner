@@ -11,12 +11,18 @@ elif installed == "n":
     start = dir.split("\\")[0] + "\\" + dir.split("\\")[1] + "\\" + dir.split("\\")[2]
     dir = start + "\AppData\Roaming\Discord\Cache"
 
+i = 0
+
 for the_file in os.listdir(dir):
     file_path = os.path.join(dir, the_file)
     try:
         if os.path.isfile(file_path):
-            print("file deleted " + file_path)
             os.unlink(file_path)
+            print("file deleted " + the_file)
         #elif os.path.isdir(file_path): shutil.rmtree(file_path)
+        i += 1
     except Exception as e:
-        print(e)
+        print("failed to delete file " + the_file)
+        
+
+input("deleted " + str(i) + " files")

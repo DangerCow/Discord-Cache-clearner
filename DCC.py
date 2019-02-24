@@ -2,7 +2,7 @@ import os
 
 print(os.path.dirname(os.path.realpath(__file__)))
 
-installed = input("have you installed discord with a coutsom folder? y/n: ")
+installed = input("have you installed discord to a custom folder")
 
 if installed == "y":
     dir = input("directory: ")
@@ -15,7 +15,7 @@ for the_file in os.listdir(dir):
     file_path = os.path.join(dir, the_file)
     try:
         if os.path.isfile(file_path):
-            print("file delted " + file_path)
+            print("file deleted " + file_path)
             os.unlink(file_path)
         #elif os.path.isdir(file_path): shutil.rmtree(file_path)
     except Exception as e:

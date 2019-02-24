@@ -2,7 +2,7 @@ import os
 
 print(os.path.dirname(os.path.realpath(__file__)))
 
-installed = input("have you installed discord to a custom folder")
+installed = input("have you installed discord to a custom folder? y/n: ")
 
 if installed == "y":
     dir = input("directory: ")
